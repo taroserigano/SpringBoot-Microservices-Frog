@@ -22,6 +22,7 @@ public class CloudGatewayApplication {
 
 	@Bean
 	KeyResolver userKeySolver() {
+		// will keep a track of the specific USER (from the same IP address for API Limiter tracker) 
 		return exchange -> Mono.just("userKey");
 	}
 
